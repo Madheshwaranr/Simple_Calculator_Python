@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Calculator</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            min-height: 70vh;
+        }
+        header {
+            background-color: #333;
+            color: white;
+            text-align: center;
+        }
+        .container {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            
+        }
+        .calculator {
+            background-color: #f5f5f5;
+            width: 300px;
+            margin: auto;
+            text-align: center;
+            border: 1px solid #ccc;
+            padding: 10px;
+        }
+        input[type="text"] {
+            box-sizing: border-box;
+            width: calc(100% - 32px);
+            font-size: 20px; 
+            height: 40px;
+            background-color: #f5f5f5; 
+            color: black; 
+            border: 1px solid #ccc;
+        }
+        input[type="submit"] {
+            width: 50px;
+            height: 50px;
+            margin: 5px;
+            font-size: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            cursor: pointer;
+            background-color: #6c757d; 
+        }
+        input[type="submit"]:active {
+            background-color: #20c997; 
+        }
+        footer {
+            background-color: skyblue;
+            padding: 10px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+
+        .members {
+            text-align: center;
+        }
+
+        .members ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .members ul li {
+            margin-right: 45px;
+            text-align: center; /* Center the text */
+        }
+
+        .member-img {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%; /* Make the image circular */
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Simple Calculator</h1>
+    </header>
+    <div class="container">
+        <div class="calculator">
+            <form action="/calculate" method="post">
+                <input type="text" id="expression" name="expression" value="{{ expression }}" readonly style="width: 100%;">
+                <br><br>
+                <input type="submit" name="clear" value="(">
+                <input type="submit" name="clear" value=")">
+                <input type="submit" name="clear" value="%">
+                <input type="submit" name="clear" value="C">
+    
+                <br>
+                <input type="submit" name="value" value="7">
+                <input type="submit" name="value" value="8">
+                <input type="submit" name="value" value="9">
+                <input type="submit" name="value" value="÷">
+    
+                <br>
+                <input type="submit" name="value" value="4">
+                <input type="submit" name="value" value="5">
+                <input type="submit" name="value" value="6">
+                <input type="submit" name="value" value="×">
+    
+                <br>
+                <input type="submit" name="value" value="1">
+                <input type="submit" name="value" value="2">
+                <input type="submit" name="value" value="3">
+                <input type="submit" name="value" value="-">
+             
+                <br>
+                <input type="submit" name="value" value="0">
+                <input type="submit" name="value" value=".">
+                <input type="submit" name="calculate" value="=">
+                <input type="submit" name="value" value="+">
+            </form>
+        </div>
+    </div>
+
+    <footer>
+        <div class="members">
+            <h2>Project Members</h2>
+            <ul>
+                <li><img class="member-img" src="{{ url_for('static', filename='images/thh.jpeg') }}" alt="Princy Pundir "><br>Princy Pundir <br>ID: 1025797</li>
+                <li><img class="member-img" src="{{ url_for('static', filename='images/thh.jpeg') }}" alt="Ria Sharma"><br>Ria Sharma<br>ID: 1025853</li>
+                <li><img class="member-img" src="{{ url_for('static', filename='images/th1.png') }}" alt="Madheshwaran R"><br>Madheshwaran R<br>ID: 1025864</li>
+                <li><img class="member-img" src="{{ url_for('static', filename='images/th1.png') }}" alt="Tharun A"><br>Tharun A<br>ID: 1025835</li>
+                <li><img class="member-img" src="{{ url_for('static', filename='images/th1.png') }}" alt="Manoj C"><br>Manoj C<br>ID: 1025835</li>
+                <li><img class="member-img" src="{{ url_for('static', filename='images/th1.png') }}" alt="karthikraja S"><br>karthikraja S<br>ID: 1025769</li>
+            </ul>
+        </div>
+    </footer>
+    
+
+</body>
+</html>
